@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS songs (
     title text,
     artist_id text,
     year int,
-    duration real
+    duration numeric
 )
 """)
 
@@ -114,7 +114,7 @@ FROM songs
 JOIN
     artists on artists.artist_id = songs.artist_id
 WHERE
-    songs.title=%s AND artists.name=%s AND songs.duration::numeric=%s;
+    songs.title=%s AND artists.name=%s AND songs.duration=%s;
 """)
 
 # QUERY LISTS
